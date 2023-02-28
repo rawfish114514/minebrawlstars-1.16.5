@@ -1,0 +1,194 @@
+{
+
+  "season_battle_s1": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s1",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s2": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s2",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s3": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s3",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s4": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s4",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s5": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s5",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s6": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s6",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s7": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s7",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s8": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s8",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s9": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s9",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s10": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s10",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s11": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s11",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s12": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s12",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s13": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s13",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s14": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s14",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s15": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s15",
+        "stream": true
+      }
+    ]
+  },
+  "season_battle_s16": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/battle/season_battle_s16",
+        "stream": true
+      }
+    ]
+  },
+
+  "bad_random_1": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/badrandom/wewontcooperate",
+        "stream": true
+      }
+    ]
+  },
+  "bad_random_2": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/badrandom/mortisgame",
+        "stream": true
+      }
+    ]
+  },
+  "bad_random_3": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/badrandom/together",
+        "stream": true
+      }
+    ]
+  },
+  "bad_random_4": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/badrandom/healinglies",
+        "stream": true
+      }
+    ]
+  },
+  "bad_random_5": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/badrandom/badrandomremix",
+        "stream": true
+      }
+    ]
+  }
+
+}

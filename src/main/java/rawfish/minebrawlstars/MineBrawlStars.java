@@ -11,6 +11,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import rawfish.minebrawlstars.item.ItemInit;
+import rawfish.minebrawlstars.util.SoundInit;
 
 @Mod(MineBrawlStars.MODID)
 public class MineBrawlStars {
@@ -18,6 +19,7 @@ public class MineBrawlStars {
     public MineBrawlStars() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemInit.ITEMS.register(modEventBus);
+        SoundInit.SOUNDS.register(modEventBus);
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
