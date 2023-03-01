@@ -2,6 +2,7 @@ package rawfish.minebrawlstars.item.tab;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import rawfish.minebrawlstars.item.ItemInit;
 
 public class MusicTab extends ItemGroup {
@@ -11,6 +12,6 @@ public class MusicTab extends ItemGroup {
 
     @Override
     public ItemStack makeIcon() {
-        return new ItemStack(ItemInit.SEASON_BATTLE_S1.get());
+        return new ItemStack(Items.MUSIC_DISC_FAR);
     }
 }
