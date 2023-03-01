@@ -18,6 +18,7 @@ public class MineBrawlStars {
     public static final String MODID="minebrawlstars";
     public MineBrawlStars() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ItemInit.ICONS.register(modEventBus);
         ItemInit.ITEMS.register(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
 

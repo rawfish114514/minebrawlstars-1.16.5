@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 
 public class MusicItem extends BaseMusicDiscItem {
     public MusicItem(Supplier<SoundEvent> soundSupplier) {
-        super(0, soundSupplier, new Item.Properties().stacksTo(1).tab(ItemInit.MUSIC_TAB).rarity(Rarity.EPIC));
+        super(0, soundSupplier,
+                new Item.Properties().stacksTo(1).tab(ItemInit.MUSIC_TAB).rarity(Rarity.EPIC));
     }
 }
