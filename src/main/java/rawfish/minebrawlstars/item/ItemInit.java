@@ -7,6 +7,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import rawfish.minebrawlstars.MineBrawlStars;
+import rawfish.minebrawlstars.item.brawl.AttackItem;
 import rawfish.minebrawlstars.item.brawl.GearItem;
 import rawfish.minebrawlstars.item.brawl.HeroHeadArmorItem;
 import rawfish.minebrawlstars.item.tab.ItemTab;
@@ -62,6 +63,7 @@ public class ItemInit {
             ItemGroup.TABS.length,
             "minebrawlstars_hero",
             HERO_ICON);
+
     public static final List<RegistryObject<Item>> heroItemList =new ArrayList<RegistryObject<Item>>(){
         public void addNull(int n){
             for(int i=0;i<n;i++){
@@ -69,6 +71,9 @@ public class ItemInit {
             }
         }
         {
+            add(ITEMS.register(
+                    "attack",
+                    ()->new AttackItem()));
             add(ITEMS.register(
                     "gear_superrare_speed",
                     ()->new GearItem(GearItem.GearRarity.SUPER)));
@@ -84,9 +89,9 @@ public class ItemInit {
             add(ITEMS.register(
                     "gear_superrare_shield",
                     ()->new GearItem(GearItem.GearRarity.SUPER)));
-            addNull(4);
+            addNull(3);
             add(ITEMS.register(
-                    "heroedhead_0_1",
+                    "heroedhead_shelly",
                     () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.STARTING)));
             addNull(8);
             add(ITEMS.register(

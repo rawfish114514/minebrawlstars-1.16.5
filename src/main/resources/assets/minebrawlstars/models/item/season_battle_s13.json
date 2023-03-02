@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minebrawlstars:items/season_battle_s13"
+    "layer0": "minebrawlstars:items/musics/season_battle_s13"
   }
 }

@@ -4,7 +4,7 @@
 
   "itemGroup.minebrawlstars_hero": "Brawl Hero",
 
-  "item.minebrawlstars.heroedhead_0_1": "SHELLY",
+  "item.minebrawlstars.heroedhead_shelly": "SHELLY",
   "item.minebrawlstars.heroedhead_1_1": "NITA",
   "item.minebrawlstars.heroedhead_1_2": "COLT",
   "item.minebrawlstars.heroedhead_1_3": "BULL",
@@ -68,6 +68,14 @@
   "item.minebrawlstars.heroedhead_6_14": "SAM",
   "item.minebrawlstars.heroedhead_6_15": "BUSTER",
   "item.minebrawlstars.heroedhead_6_16": "MANDY",
+
+  "item.minebrawlstars.attack": "Attack",
+
+  "item.minebrawlstars.gear_superrare_speed": "Speed",
+  "item.minebrawlstars.gear_superrare_health": "Health",
+  "item.minebrawlstars.gear_superrare_damage": "Damage",
+  "item.minebrawlstars.gear_superrare_vision": "Vision",
+  "item.minebrawlstars.gear_superrare_shield": "Shield",
 
 
   "itemGroup.minebrawlstars_music": "Music Disc",

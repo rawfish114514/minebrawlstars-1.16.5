@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minebrawlstars:items/esports_2"
+    "layer0": "minebrawlstars:items/musics/esports_2"
   }
 }

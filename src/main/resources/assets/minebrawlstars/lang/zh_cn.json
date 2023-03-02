@@ -4,7 +4,7 @@
 
   "itemGroup.minebrawlstars_hero": "乱斗英雄",
 
-  "item.minebrawlstars.heroedhead_0_1": "雪莉",
+  "item.minebrawlstars.heroedhead_shelly": "雪莉",
   "item.minebrawlstars.heroedhead_1_1": "妮塔",
   "item.minebrawlstars.heroedhead_1_2": "柯尔特",
   "item.minebrawlstars.heroedhead_1_3": "公牛",
@@ -68,6 +68,14 @@
   "item.minebrawlstars.heroedhead_6_14": "山姆",
   "item.minebrawlstars.heroedhead_6_15": "巴斯特",
   "item.minebrawlstars.heroedhead_6_16": "曼迪",
+
+  "item.minebrawlstars.attack": "攻击",
+
+  "item.minebrawlstars.gear_superrare_speed": "迅捷",
+  "item.minebrawlstars.gear_superrare_health": "恢复",
+  "item.minebrawlstars.gear_superrare_damage": "强攻",
+  "item.minebrawlstars.gear_superrare_vision": "洞察",
+  "item.minebrawlstars.gear_superrare_shield": "护盾",
 
 
   "itemGroup.minebrawlstars_music": "音乐唱片",
