@@ -145,6 +145,79 @@
     ]
   },
 
+  "season_premiere_s2": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s2",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s3": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s3",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s4": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s4",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s5": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s5",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s6": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s6",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s7": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s7",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s8": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s8",
+        "stream": true
+      }
+    ]
+  },
+  "season_premiere_s9": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/premiere/season_premiere_s9",
+        "stream": true
+      }
+    ]
+  },
+
   "bad_random_1": {
     "category": "record",
     "sounds": [
@@ -186,6 +259,25 @@
     "sounds": [
       {
         "name": "minebrawlstars:music/badrandom/badrandomremix",
+        "stream": true
+      }
+    ]
+  },
+
+  "esports_1": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/esports/riseuptothetop",
+        "stream": true
+      }
+    ]
+  },
+  "esports_2": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "minebrawlstars:music/esports/fighter",
         "stream": true
       }
     ]

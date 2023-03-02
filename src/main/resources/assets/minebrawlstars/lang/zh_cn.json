@@ -1,6 +1,9 @@
 {
   "itemGroup.minebrawlstars_brawl": "荒野乱斗",
 
+
+  "itemGroup.minebrawlstars_hero": "乱斗英雄",
+
   "item.minebrawlstars.heroedhead_0_1": "雪莉",
   "item.minebrawlstars.heroedhead_1_1": "妮塔",
   "item.minebrawlstars.heroedhead_1_2": "柯尔特",
@@ -101,6 +104,22 @@
   "item.minebrawlstars.season_battle_s15.desc": "S15",
   "item.minebrawlstars.season_battle_s16": "战斗音乐",
   "item.minebrawlstars.season_battle_s16.desc": "S16",
+  "item.minebrawlstars.season_premiere_s2": "先导音乐",
+  "item.minebrawlstars.season_premiere_s2.desc": "S2",
+  "item.minebrawlstars.season_premiere_s3": "先导音乐",
+  "item.minebrawlstars.season_premiere_s3.desc": "S3",
+  "item.minebrawlstars.season_premiere_s4": "先导音乐",
+  "item.minebrawlstars.season_premiere_s4.desc": "S4",
+  "item.minebrawlstars.season_premiere_s5": "先导音乐",
+  "item.minebrawlstars.season_premiere_s5.desc": "S5",
+  "item.minebrawlstars.season_premiere_s6": "先导音乐",
+  "item.minebrawlstars.season_premiere_s6.desc": "S6",
+  "item.minebrawlstars.season_premiere_s7": "先导音乐",
+  "item.minebrawlstars.season_premiere_s7.desc": "S7",
+  "item.minebrawlstars.season_premiere_s8": "先导音乐",
+  "item.minebrawlstars.season_premiere_s8.desc": "S8",
+  "item.minebrawlstars.season_premiere_s9": "先导音乐",
+  "item.minebrawlstars.season_premiere_s9.desc": "S9",
   "item.minebrawlstars.bad_random_1": "野排坑王",
   "item.minebrawlstars.bad_random_1.desc": "We Wont Cooperate",
   "item.minebrawlstars.bad_random_2": "野排坑王",
@@ -111,6 +130,10 @@
   "item.minebrawlstars.bad_random_4.desc": "Healing Lies",
   "item.minebrawlstars.bad_random_5": "野排坑王",
   "item.minebrawlstars.bad_random_5.desc": "Bad Random Remix",
+  "item.minebrawlstars.esports_1": "电竞音乐",
+  "item.minebrawlstars.esports_1.desc": "Rise up to the Top",
+  "item.minebrawlstars.esports_2": "电竞音乐",
+  "item.minebrawlstars.esports_2.desc": "Fighter",
 
   "rarity.minebrawlstars.starting": "初始",
   "rarity.minebrawlstars.rare": "稀有",

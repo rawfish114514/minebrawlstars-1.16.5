@@ -1,6 +1,9 @@
 {
   "itemGroup.minebrawlstars_brawl": "Brawl Stars",
 
+
+  "itemGroup.minebrawlstars_hero": "Brawl Hero",
+
   "item.minebrawlstars.heroedhead_0_1": "SHELLY",
   "item.minebrawlstars.heroedhead_1_1": "NITA",
   "item.minebrawlstars.heroedhead_1_2": "COLT",
@@ -101,6 +104,22 @@
   "item.minebrawlstars.season_battle_s15.desc": "S15",
   "item.minebrawlstars.season_battle_s16": "Battle Music",
   "item.minebrawlstars.season_battle_s16.desc": "S16",
+  "item.minebrawlstars.season_premiere_s2": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s2.desc": "S2",
+  "item.minebrawlstars.season_premiere_s3": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s3.desc": "S3",
+  "item.minebrawlstars.season_premiere_s4": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s4.desc": "S4",
+  "item.minebrawlstars.season_premiere_s5": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s5.desc": "S5",
+  "item.minebrawlstars.season_premiere_s6": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s6.desc": "S6",
+  "item.minebrawlstars.season_premiere_s7": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s7.desc": "S7",
+  "item.minebrawlstars.season_premiere_s8": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s8.desc": "S8",
+  "item.minebrawlstars.season_premiere_s9": "Premiere Music",
+  "item.minebrawlstars.season_premiere_s9.desc": "S9",
   "item.minebrawlstars.bad_random_1": "Bad Random",
   "item.minebrawlstars.bad_random_1.desc": "We Wont Cooperate",
   "item.minebrawlstars.bad_random_2": "Bad Random",
@@ -111,6 +130,10 @@
   "item.minebrawlstars.bad_random_4.desc": "Healing Lies",
   "item.minebrawlstars.bad_random_5": "Bad Random",
   "item.minebrawlstars.bad_random_5.desc": "Bad Random Remix",
+  "item.minebrawlstars.esports_1": "Esports Music",
+  "item.minebrawlstars.esports_1.desc": "Rise up to the Top",
+  "item.minebrawlstars.esports_2": "Esports Music",
+  "item.minebrawlstars.esports_2.desc": "Fighter",
 
   "rarity.minebrawlstars.starting": "STARTING",
   "rarity.minebrawlstars.rare": "RARE",

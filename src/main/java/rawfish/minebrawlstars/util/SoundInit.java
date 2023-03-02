@@ -64,6 +64,31 @@ public class SoundInit {
             "season_battle_s16.name",
             () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_battle_s16"))));
 
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S2=(SOUNDS.register(
+            "season_premiere_s2.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s2"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S3=(SOUNDS.register(
+            "season_premiere_s3.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s3"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S4=(SOUNDS.register(
+            "season_premiere_s4.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s4"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S5=(SOUNDS.register(
+            "season_premiere_s5.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s5"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S6=(SOUNDS.register(
+            "season_premiere_s6.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s6"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S7=(SOUNDS.register(
+            "season_premiere_s7.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s7"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S8=(SOUNDS.register(
+            "season_premiere_s8.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s8"))));
+    public static final RegistryObject<SoundEvent> SEASON_PREMIERE_S9=(SOUNDS.register(
+            "season_premiere_s9.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "season_premiere_s9"))));
+
     public static final RegistryObject<SoundEvent> BAD_RANDOM_1=(SOUNDS.register(
             "bad_random_1.name",
             () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "bad_random_1"))));
@@ -80,4 +105,10 @@ public class SoundInit {
             "bad_random_5.name",
             () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "bad_random_5"))));
 
+    public static final RegistryObject<SoundEvent> ESPORTS_1=(SOUNDS.register(
+            "esports_1.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "esports_1"))));
+    public static final RegistryObject<SoundEvent> ESPORTS_2=(SOUNDS.register(
+            "esports_2.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "esports_2"))));
 }

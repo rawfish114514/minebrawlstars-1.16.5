@@ -1,4 +1,4 @@
-package rawfish.minebrawlstars.item;
+package rawfish.minebrawlstars.item.brawl;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -14,6 +14,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.spawner.ISpecialSpawner;
 import org.lwjgl.system.CallbackI;
+import rawfish.minebrawlstars.item.BaseArmorItem;
+import rawfish.minebrawlstars.item.ItemInit;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Constructor;
@@ -23,7 +25,7 @@ import java.util.List;
 public class HeroHeadArmorItem extends BaseArmorItem {
     public HeroHeadArmorItem(HeroRarity rarity) {
         super(ArmorMaterial.NETHERITE, EquipmentSlotType.HEAD,
-                new Properties().durability(0).tab(ItemInit.BRAWL_TAB));
+                new Properties().durability(0));
         this.rarity=rarity;
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         this.undefaultModifiers= builder.build();
