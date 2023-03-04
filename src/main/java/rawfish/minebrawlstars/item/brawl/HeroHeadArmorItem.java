@@ -14,6 +14,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.spawner.ISpecialSpawner;
 import org.lwjgl.system.CallbackI;
+import rawfish.minebrawlstars.brawl.Hero;
+import rawfish.minebrawlstars.brawl.HeroFactory;
 import rawfish.minebrawlstars.item.BaseArmorItem;
 import rawfish.minebrawlstars.item.ItemInit;
 
@@ -23,13 +25,18 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class HeroHeadArmorItem extends BaseArmorItem {
-    public HeroHeadArmorItem(HeroRarity rarity) {
+    public HeroHeadArmorItem(HeroRarity rarity){
+        this(rarity,null);
+    }
+    public HeroHeadArmorItem(HeroRarity rarity, HeroFactory heroFactory) {
         super(ArmorMaterial.NETHERITE, EquipmentSlotType.HEAD,
                 new Properties().durability(0));
         this.rarity=rarity;
+        this.heroFactory=heroFactory;
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         this.undefaultModifiers= builder.build();
     }
+    public HeroFactory heroFactory;
 
     public int getDamage(ItemStack stack){
         return 0;
@@ -44,10 +51,23 @@ public class HeroHeadArmorItem extends BaseArmorItem {
     @Override
     public void appendHoverText(ItemStack p_77624_1_, @Nullable World p_77624_2_, List<ITextComponent> p_77624_3_, ITooltipFlag p_77624_4_) {
         if(rarity==HeroRarity.CHROMATIC){
-            p_77624_3_.add(new ChromaticText(new TranslationTextComponent(rarity.key).getString()));
+            p_77624_3_.add(new ChromaticText(
+                    new TranslationTextComponent(rarity.key).getString()
+                    +" "
+                    +new TranslationTextComponent("itemtype.minebrawlstars.hero").getString()
+            ));
         }else {
-            p_77624_3_.add(new StringTextComponent(rarity.format + new TranslationTextComponent(rarity.key).getString()));
+            p_77624_3_.add(new StringTextComponent(rarity.format
+                    +new TranslationTextComponent(rarity.key).getString()
+                    +" "
+                    +new TranslationTextComponent("itemtype.minebrawlstars.hero").getString()
+            ));
         }
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return 0;
     }
 
     public Multimap<Attribute, AttributeModifier> undefaultModifiers;

@@ -28,7 +28,11 @@ public class GearItem extends BaseItem {
 
     @Override
     public void appendHoverText(ItemStack p_77624_1_, @Nullable World p_77624_2_, List<ITextComponent> p_77624_3_, ITooltipFlag p_77624_4_) {
-        p_77624_3_.add(new StringTextComponent(rarity.format + new TranslationTextComponent(rarity.key).getString()));
+        p_77624_3_.add(new StringTextComponent(rarity.format
+                +new TranslationTextComponent(rarity.key).getString()
+                +" "
+                +new TranslationTextComponent("itemtype.minebrawlstars.gear").getString()
+        ));
     }
 
     public enum GearRarity{

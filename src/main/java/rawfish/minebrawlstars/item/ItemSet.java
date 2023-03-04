@@ -3,6 +3,7 @@ package rawfish.minebrawlstars.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -22,7 +23,11 @@ public class ItemSet extends Item {
             Item item;
             for(int i=0;i<list.size();i++){
                 item=list.get(i).get();
-                itemList.add(new ItemStack(item));
+                if(item.getClass()==NullItem.class) {
+                    itemList.add(new ItemStack(Items.AIR));
+                }else{
+                    itemList.add(new ItemStack(item));
+                }
             }
         }
     }

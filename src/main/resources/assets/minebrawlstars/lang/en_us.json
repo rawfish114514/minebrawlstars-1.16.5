@@ -5,6 +5,11 @@
   "itemGroup.minebrawlstars_hero": "Brawl Hero",
 
   "item.minebrawlstars.heroedhead_shelly": "SHELLY",
+  "item.minebrawlstars.gadget_shelly_1": "Fast Forward",
+  "item.minebrawlstars.gadget_shelly_2": "Clay Pigeons",
+  "item.minebrawlstars.starpower_shelly_1": "Shell Shock",
+  "item.minebrawlstars.starpower_shelly_2": "Band Aid",
+
   "item.minebrawlstars.heroedhead_1_1": "NITA",
   "item.minebrawlstars.heroedhead_1_2": "COLT",
   "item.minebrawlstars.heroedhead_1_3": "BULL",
@@ -45,6 +50,7 @@
   "item.minebrawlstars.heroedhead_4_7": "BYRON",
   "item.minebrawlstars.heroedhead_4_8": "SQUEAK",
   "item.minebrawlstars.heroedhead_4_9": "GRAY",
+  "item.minebrawlstars.heroedhead_4_10": "WILLOW",
   "item.minebrawlstars.heroedhead_5_1": "SPIKE",
   "item.minebrawlstars.heroedhead_5_2": "CROW",
   "item.minebrawlstars.heroedhead_5_3": "LEON",
@@ -68,6 +74,7 @@
   "item.minebrawlstars.heroedhead_6_14": "SAM",
   "item.minebrawlstars.heroedhead_6_15": "BUSTER",
   "item.minebrawlstars.heroedhead_6_16": "MANDY",
+  "item.minebrawlstars.heroedhead_6_17": "R-T",
 
   "item.minebrawlstars.attack": "Attack",
 
@@ -76,6 +83,9 @@
   "item.minebrawlstars.gear_superrare_damage": "Damage",
   "item.minebrawlstars.gear_superrare_vision": "Vision",
   "item.minebrawlstars.gear_superrare_shield": "Shield",
+
+  "item.minebrawlstars.gear_epic_reloadspeed": "Reload Speed",
+  "item.minebrawlstars.gear_epic_supercharge": "Super Charge",
 
 
   "itemGroup.minebrawlstars_music": "Music Disc",
@@ -143,11 +153,16 @@
   "item.minebrawlstars.esports_2": "Esports Music",
   "item.minebrawlstars.esports_2.desc": "Fighter",
 
-  "rarity.minebrawlstars.starting": "STARTING",
-  "rarity.minebrawlstars.rare": "RARE",
-  "rarity.minebrawlstars.super": "SUPER",
-  "rarity.minebrawlstars.epic": "EPIC",
-  "rarity.minebrawlstars.mythic": "MYTHIC",
-  "rarity.minebrawlstars.legendary": "LEGENDARY",
-  "rarity.minebrawlstars.chromatic": "CHROMATIC"
+  "rarity.minebrawlstars.starting": "Starting",
+  "rarity.minebrawlstars.rare": "Rare",
+  "rarity.minebrawlstars.super": "Super Rare",
+  "rarity.minebrawlstars.epic": "Epic",
+  "rarity.minebrawlstars.mythic": "Mythic",
+  "rarity.minebrawlstars.legendary": "Legendary",
+  "rarity.minebrawlstars.chromatic": "Chromatic",
+
+  "itemtype.minebrawlstars.hero": "Hero",
+  "itemtype.minebrawlstars.gadget": "Gadger",
+  "itemtype.minebrawlstars.starpower": "Star Power",
+  "itemtype.minebrawlstars.gear": "Gear"
 }

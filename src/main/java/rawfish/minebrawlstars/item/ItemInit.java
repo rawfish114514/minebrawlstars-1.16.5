@@ -7,9 +7,8 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import rawfish.minebrawlstars.MineBrawlStars;
-import rawfish.minebrawlstars.item.brawl.AttackItem;
-import rawfish.minebrawlstars.item.brawl.GearItem;
-import rawfish.minebrawlstars.item.brawl.HeroHeadArmorItem;
+import rawfish.minebrawlstars.brawl.brawlerfactort.ShellyHeroFactory;
+import rawfish.minebrawlstars.item.brawl.*;
 import rawfish.minebrawlstars.item.tab.ItemTab;
 import rawfish.minebrawlstars.util.SoundInit;
 
@@ -37,12 +36,7 @@ public class ItemInit {
 
     public static final RegistryObject<Item> NULL=ITEMS.register(
             "null",
-            ()->new BaseItem(new Item.Properties()){
-                @Override
-                public ITextComponent getName(ItemStack itemStack) {
-                    return new StringTextComponent("");
-                }
-            }
+            ()->new NullItem()
     );
 
 
@@ -89,11 +83,32 @@ public class ItemInit {
             add(ITEMS.register(
                     "gear_superrare_shield",
                     ()->new GearItem(GearItem.GearRarity.SUPER)));
-            addNull(3);
+            add(ITEMS.register(
+                    "gear_epic_reloadspeed",
+                    ()->new GearItem(GearItem.GearRarity.EPIC)));
+            add(ITEMS.register(
+                    "gear_epic_supercharge",
+                    ()->new GearItem(GearItem.GearRarity.EPIC)));
+            addNull(1);
             add(ITEMS.register(
                     "heroedhead_shelly",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.STARTING)));
-            addNull(8);
+                    () -> new HeroHeadArmorItem(
+                            HeroHeadArmorItem.HeroRarity.STARTING,
+                            ShellyHeroFactory.thisFactory
+                            )));
+            add(ITEMS.register(
+                    "gadget_shelly_1",
+                    () -> new GadgetItem()));
+            add(ITEMS.register(
+                    "gadget_shelly_2",
+                    () -> new GadgetItem()));
+            add(ITEMS.register(
+                    "starpower_shelly_1",
+                    () -> new StarpowerItem()));
+            add(ITEMS.register(
+                    "starpower_shelly_2",
+                    () -> new StarpowerItem()));
+            addNull(4);
             add(ITEMS.register(
                     "heroedhead_1_1",
                     () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
@@ -255,6 +270,10 @@ public class ItemInit {
                     () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
+                    "heroedhead_4_10",
+                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+            addNull(8);
+            add(ITEMS.register(
                     "heroedhead_5_1",
                     () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
@@ -344,6 +363,10 @@ public class ItemInit {
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_16",
+                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+            addNull(8);
+            add(ITEMS.register(
+                    "heroedhead_6_17",
                     () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
     }};

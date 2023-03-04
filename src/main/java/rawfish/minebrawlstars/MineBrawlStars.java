@@ -10,6 +10,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import rawfish.minebrawlstars.common.EventListener;
 import rawfish.minebrawlstars.item.ItemInit;
 import rawfish.minebrawlstars.util.SoundInit;
 
@@ -22,6 +23,8 @@ public class MineBrawlStars {
         ItemInit.ITEMS.register(modEventBus);
         SoundInit.SOUNDS.register(modEventBus);
 
+
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -33,6 +36,7 @@ public class MineBrawlStars {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        EventListener.register(MinecraftForge.EVENT_BUS);
     }
 
     private void setup(final FMLCommonSetupEvent event)

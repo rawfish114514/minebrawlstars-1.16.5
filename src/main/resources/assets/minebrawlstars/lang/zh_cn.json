@@ -5,6 +5,11 @@
   "itemGroup.minebrawlstars_hero": "乱斗英雄",
 
   "item.minebrawlstars.heroedhead_shelly": "雪莉",
+  "item.minebrawlstars.gadget_shelly_1": "冲刺跑鞋",
+  "item.minebrawlstars.gadget_shelly_2": "陶土飞靶",
+  "item.minebrawlstars.starpower_shelly_1": "震荡射击",
+  "item.minebrawlstars.starpower_shelly_2": "快速包扎",
+
   "item.minebrawlstars.heroedhead_1_1": "妮塔",
   "item.minebrawlstars.heroedhead_1_2": "柯尔特",
   "item.minebrawlstars.heroedhead_1_3": "公牛",
@@ -45,6 +50,7 @@
   "item.minebrawlstars.heroedhead_4_7": "拜伦",
   "item.minebrawlstars.heroedhead_4_8": "史魁克",
   "item.minebrawlstars.heroedhead_4_9": "戈雷",
+  "item.minebrawlstars.heroedhead_4_10": "薇洛",
   "item.minebrawlstars.heroedhead_5_1": "斯派克",
   "item.minebrawlstars.heroedhead_5_2": "黑鸭",
   "item.minebrawlstars.heroedhead_5_3": "里昂",
@@ -68,6 +74,7 @@
   "item.minebrawlstars.heroedhead_6_14": "山姆",
   "item.minebrawlstars.heroedhead_6_15": "巴斯特",
   "item.minebrawlstars.heroedhead_6_16": "曼迪",
+  "item.minebrawlstars.heroedhead_6_17": "阿尔缇",
 
   "item.minebrawlstars.attack": "攻击",
 
@@ -76,6 +83,9 @@
   "item.minebrawlstars.gear_superrare_damage": "强攻",
   "item.minebrawlstars.gear_superrare_vision": "洞察",
   "item.minebrawlstars.gear_superrare_shield": "护盾",
+
+  "item.minebrawlstars.gear_epic_reloadspeed": "巧手",
+  "item.minebrawlstars.gear_epic_supercharge": "速充",
 
 
   "itemGroup.minebrawlstars_music": "音乐唱片",
@@ -149,5 +159,10 @@
   "rarity.minebrawlstars.epic": "史诗",
   "rarity.minebrawlstars.mythic": "神话",
   "rarity.minebrawlstars.legendary": "传奇",
-  "rarity.minebrawlstars.chromatic": "流彩"
+  "rarity.minebrawlstars.chromatic": "流彩",
+
+  "itemtype.minebrawlstars.hero": "英雄",
+  "itemtype.minebrawlstars.gadget": "随身妙具",
+  "itemtype.minebrawlstars.starpower": "星辉之力",
+  "itemtype.minebrawlstars.gear": "强化装备"
 }
