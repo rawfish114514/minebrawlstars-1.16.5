@@ -1,4 +1,4 @@
-package rawfish.minebrawlstars.item.brawl;
+package rawfish.minebrawlstars.item.brawler;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -37,7 +37,7 @@ public class GearItem extends BaseItem {
 
     public enum GearRarity{
 
-        SUPER("\u00a79","rarity.minebrawlstars.super"),
+        SUPERRARE("\u00a79","rarity.minebrawlstars.superrare"),
         EPIC("\u00a75","rarity.minebrawlstars.epic"),
         MYTHIC("\u00a7c","rarity.minebrawlstars.mythic");
 

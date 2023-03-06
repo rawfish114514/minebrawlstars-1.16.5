@@ -1,5 +1,7 @@
 package rawfish.minebrawlstars;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

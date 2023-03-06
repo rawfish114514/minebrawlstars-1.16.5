@@ -1,6 +1,8 @@
 {
   "itemGroup.minebrawlstars_brawl": "Brawl Stars",
 
+  "item.minebrawlstars.energy_drink": "Energy Drink",
+
 
   "itemGroup.minebrawlstars_hero": "Brawl Hero",
 
@@ -10,7 +12,12 @@
   "item.minebrawlstars.starpower_shelly_1": "Shell Shock",
   "item.minebrawlstars.starpower_shelly_2": "Band Aid",
 
-  "item.minebrawlstars.heroedhead_1_1": "NITA",
+  "item.minebrawlstars.heroedhead_nita": "NITA",
+  "item.minebrawlstars.gadget_nita_1": "Bear Paws",
+  "item.minebrawlstars.gadget_nita_2": "Faux Fur",
+  "item.minebrawlstars.starpower_nita_1": "Bear With Me",
+  "item.minebrawlstars.starpower_nita_2": "Hyper Bear",
+
   "item.minebrawlstars.heroedhead_1_2": "COLT",
   "item.minebrawlstars.heroedhead_1_3": "BULL",
   "item.minebrawlstars.heroedhead_1_4": "BROCK",
@@ -155,7 +162,7 @@
 
   "rarity.minebrawlstars.starting": "Starting",
   "rarity.minebrawlstars.rare": "Rare",
-  "rarity.minebrawlstars.super": "Super Rare",
+  "rarity.minebrawlstars.superrare": "Super Rare",
   "rarity.minebrawlstars.epic": "Epic",
   "rarity.minebrawlstars.mythic": "Mythic",
   "rarity.minebrawlstars.legendary": "Legendary",

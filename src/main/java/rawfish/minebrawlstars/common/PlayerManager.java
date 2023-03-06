@@ -4,7 +4,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.brawl.HeroFactory;
-import rawfish.minebrawlstars.item.brawl.HeroHeadArmorItem;
+import rawfish.minebrawlstars.item.brawler.HeroedHeadArmorItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,8 +37,8 @@ public class PlayerManager {
             pb:
             {
                 for (ItemStack itemStack : player.getArmorSlots()) {
-                    if (itemStack.getItem() instanceof HeroHeadArmorItem) {
-                        HeroHeadArmorItem heroHead = (HeroHeadArmorItem) itemStack.getItem();
+                    if (itemStack.getItem() instanceof HeroedHeadArmorItem) {
+                        HeroedHeadArmorItem heroHead = (HeroedHeadArmorItem) itemStack.getItem();
                         process(player, heroHead);
                         break pb;
                     }
@@ -54,7 +54,7 @@ public class PlayerManager {
      * @param player
      * @param heroHead
      */
-    public static void process(ServerPlayerEntity player,HeroHeadArmorItem heroHead){
+    public static void process(ServerPlayerEntity player, HeroedHeadArmorItem heroHead){
         Hero hero=playerMap.get(player);
         if(hero!=null){
             //System.out.println("\u00a75"+hero.getClass());

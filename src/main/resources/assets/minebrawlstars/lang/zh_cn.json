@@ -1,6 +1,8 @@
 {
   "itemGroup.minebrawlstars_brawl": "荒野乱斗",
 
+  "item.minebrawlstars.energy_drink": "能量饮料",
+
 
   "itemGroup.minebrawlstars_hero": "乱斗英雄",
 
@@ -10,7 +12,12 @@
   "item.minebrawlstars.starpower_shelly_1": "震荡射击",
   "item.minebrawlstars.starpower_shelly_2": "快速包扎",
 
-  "item.minebrawlstars.heroedhead_1_1": "妮塔",
+  "item.minebrawlstars.heroedhead_nita": "妮塔",
+  "item.minebrawlstars.gadget_nita_1": "熊之利爪",
+  "item.minebrawlstars.gadget_nita_2": "人造皮毛",
+  "item.minebrawlstars.starpower_nita_1": "灵魂协同",
+  "item.minebrawlstars.starpower_nita_2": "狂暴巨熊",
+
   "item.minebrawlstars.heroedhead_1_2": "柯尔特",
   "item.minebrawlstars.heroedhead_1_3": "公牛",
   "item.minebrawlstars.heroedhead_1_4": "布洛克",
@@ -155,7 +162,7 @@
 
   "rarity.minebrawlstars.starting": "初始",
   "rarity.minebrawlstars.rare": "稀有",
-  "rarity.minebrawlstars.super": "超稀有",
+  "rarity.minebrawlstars.superrare": "超稀有",
   "rarity.minebrawlstars.epic": "史诗",
   "rarity.minebrawlstars.mythic": "神话",
   "rarity.minebrawlstars.legendary": "传奇",

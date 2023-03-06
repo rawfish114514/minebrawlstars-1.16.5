@@ -1,18 +1,14 @@
 package rawfish.minebrawlstars.brawl.brawler;
 
-import io.netty.channel.ChannelHandlerContext;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.network.play.client.CChatMessagePacket;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.brawl.HeroFactory;
-import rawfish.minebrawlstars.item.brawl.AttackItem;
+import rawfish.minebrawlstars.item.brawler.AttackItem;
 
 public class ShellyHero implements Hero {
 

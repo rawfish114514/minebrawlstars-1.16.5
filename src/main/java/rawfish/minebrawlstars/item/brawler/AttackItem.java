@@ -1,7 +1,5 @@
-package rawfish.minebrawlstars.item.brawl;
+package rawfish.minebrawlstars.item.brawler;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import rawfish.minebrawlstars.item.BaseItem;
 
 public class AttackItem extends BaseItem {

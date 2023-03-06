@@ -1,4 +1,4 @@
-package rawfish.minebrawlstars.item.brawl;
+package rawfish.minebrawlstars.item.brawler;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -11,8 +11,8 @@ import rawfish.minebrawlstars.item.BaseItem;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class StarpowerItem extends BaseItem {
-    public StarpowerItem() {
+public class GadgetItem extends BaseItem {
+    public GadgetItem() {
         super(new Properties()
                 .stacksTo(1));
     }
@@ -24,8 +24,8 @@ public class StarpowerItem extends BaseItem {
 
     @Override
     public void appendHoverText(ItemStack p_77624_1_, @Nullable World p_77624_2_, List<ITextComponent> p_77624_3_, ITooltipFlag p_77624_4_) {
-        p_77624_3_.add(new StringTextComponent("\u00a7e"
-                +new TranslationTextComponent("itemtype.minebrawlstars.starpower").getString()
+        p_77624_3_.add(new StringTextComponent("\u00a7a"
+                +new TranslationTextComponent("itemtype.minebrawlstars.gadget").getString()
         ));
     }
 }

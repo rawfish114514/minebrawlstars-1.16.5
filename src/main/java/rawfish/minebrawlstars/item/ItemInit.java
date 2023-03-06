@@ -1,14 +1,15 @@
 package rawfish.minebrawlstars.item;
 
 import net.minecraft.item.*;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import rawfish.minebrawlstars.MineBrawlStars;
+import rawfish.minebrawlstars.brawl.armor.HeroedHeadModels;
 import rawfish.minebrawlstars.brawl.brawlerfactort.ShellyHeroFactory;
-import rawfish.minebrawlstars.item.brawl.*;
+import rawfish.minebrawlstars.item.brawl.EnergyDrinkItem;
+import rawfish.minebrawlstars.item.brawler.*;
+import rawfish.minebrawlstars.item.material.HeroedHeadArmorMaterial;
 import rawfish.minebrawlstars.item.tab.ItemTab;
 import rawfish.minebrawlstars.util.SoundInit;
 
@@ -46,6 +47,9 @@ public class ItemInit {
             BRAWL_ICON);
 
     public static final List<RegistryObject<Item>> brawlItemList =new ArrayList<RegistryObject<Item>>(){{
+        add(ITEMS.register(
+                "energy_drink",
+                ()->new EnergyDrinkItem()));
     }};
 
     public static final RegistryObject<Item> BRAWL_SET=ITEMS.register(
@@ -70,19 +74,19 @@ public class ItemInit {
                     ()->new AttackItem()));
             add(ITEMS.register(
                     "gear_superrare_speed",
-                    ()->new GearItem(GearItem.GearRarity.SUPER)));
+                    ()->new GearItem(GearItem.GearRarity.SUPERRARE)));
             add(ITEMS.register(
                     "gear_superrare_health",
-                    ()->new GearItem(GearItem.GearRarity.SUPER)));
+                    ()->new GearItem(GearItem.GearRarity.SUPERRARE)));
             add(ITEMS.register(
                     "gear_superrare_damage",
-                    ()->new GearItem(GearItem.GearRarity.SUPER)));
+                    ()->new GearItem(GearItem.GearRarity.SUPERRARE)));
             add(ITEMS.register(
                     "gear_superrare_vision",
-                    ()->new GearItem(GearItem.GearRarity.SUPER)));
+                    ()->new GearItem(GearItem.GearRarity.SUPERRARE)));
             add(ITEMS.register(
                     "gear_superrare_shield",
-                    ()->new GearItem(GearItem.GearRarity.SUPER)));
+                    ()->new GearItem(GearItem.GearRarity.SUPERRARE)));
             add(ITEMS.register(
                     "gear_epic_reloadspeed",
                     ()->new GearItem(GearItem.GearRarity.EPIC)));
@@ -92,9 +96,11 @@ public class ItemInit {
             addNull(1);
             add(ITEMS.register(
                     "heroedhead_shelly",
-                    () -> new HeroHeadArmorItem(
-                            HeroHeadArmorItem.HeroRarity.STARTING,
-                            ShellyHeroFactory.thisFactory
+                    () -> new HeroedHeadArmorItem(
+                            HeroedHeadArmorMaterial.HEROEDHEAD_SHELLY,
+                            HeroedHeadArmorItem.HeroRarity.STARTING,
+                            ShellyHeroFactory.thisFactory,
+                            HeroedHeadModels.MODEL_SHELLY
                             )));
             add(ITEMS.register(
                     "gadget_shelly_1",
@@ -110,264 +116,276 @@ public class ItemInit {
                     () -> new StarpowerItem()));
             addNull(4);
             add(ITEMS.register(
-                    "heroedhead_1_1",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
-            addNull(8);
+                    "heroedhead_nita",
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
+            add(ITEMS.register(
+                    "gadget_nita_1",
+                    () -> new GadgetItem()));
+            add(ITEMS.register(
+                    "gadget_nita_2",
+                    () -> new GadgetItem()));
+            add(ITEMS.register(
+                    "starpower_nita_1",
+                    () -> new StarpowerItem()));
+            add(ITEMS.register(
+                    "starpower_nita_2",
+                    () -> new StarpowerItem()));
+            addNull(4);
             add(ITEMS.register(
                     "heroedhead_1_2",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_1_3",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_1_4",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_1_5",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_1_6",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_1_7",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_1_8",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.RARE)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.RARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_1",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_2",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_3",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_4",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_5",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_6",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_7",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_8",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_9",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_2_10",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.SUPER)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.SUPERRARE)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_1",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_2",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_3",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_4",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_5",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_6",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_7",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_8",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_9",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_10",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_11",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_12",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_3_13",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.EPIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.EPIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_1",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_2",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_3",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_4",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_5",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_6",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_7",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_8",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_9",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_4_10",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.MYTHIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.MYTHIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_1",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_2",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_3",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_4",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_5",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_6",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_5_7",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.LEGENDARY)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.LEGENDARY)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_1",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_2",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_3",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_4",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_5",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_6",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_7",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_8",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_9",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_10",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_11",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_12",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_13",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_14",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_15",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_16",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
             add(ITEMS.register(
                     "heroedhead_6_17",
-                    () -> new HeroHeadArmorItem(HeroHeadArmorItem.HeroRarity.CHROMATIC)));
+                    () -> new HeroedHeadArmorItem(HeroedHeadArmorItem.HeroRarity.CHROMATIC)));
             addNull(8);
     }};
 
