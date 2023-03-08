@@ -171,5 +171,7 @@
   "itemtype.minebrawlstars.hero": "英雄",
   "itemtype.minebrawlstars.gadget": "随身妙具",
   "itemtype.minebrawlstars.starpower": "星辉之力",
-  "itemtype.minebrawlstars.gear": "强化装备"
+  "itemtype.minebrawlstars.gear": "强化装备",
+
+  "channel":"minebrawlstars_channel"
 }

@@ -11,7 +11,7 @@ import rawfish.minebrawlstars.item.brawl.EnergyDrinkItem;
 import rawfish.minebrawlstars.item.brawler.*;
 import rawfish.minebrawlstars.item.material.HeroedHeadArmorMaterial;
 import rawfish.minebrawlstars.item.tab.ItemTab;
-import rawfish.minebrawlstars.util.SoundInit;
+import rawfish.minebrawlstars.item.util.SoundInit;
 
 import java.util.ArrayList;
 import java.util.List;

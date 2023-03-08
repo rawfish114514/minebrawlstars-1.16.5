@@ -4,6 +4,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 
 public interface Hero {
     HeroFactory getFactory();
-    void deploy();
-    void cancel();
+
+    void attack();
 }

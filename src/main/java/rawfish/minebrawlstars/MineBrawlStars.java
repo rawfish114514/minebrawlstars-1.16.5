@@ -1,7 +1,5 @@
 package rawfish.minebrawlstars;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.EntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,9 +10,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import rawfish.minebrawlstars.common.EventListener;
+import rawfish.minebrawlstars.common.ChannelInit;
 import rawfish.minebrawlstars.item.ItemInit;
-import rawfish.minebrawlstars.util.SoundInit;
+import rawfish.minebrawlstars.item.util.SoundInit;
 
 @Mod(MineBrawlStars.MODID)
 public class MineBrawlStars {
@@ -38,15 +36,16 @@ public class MineBrawlStars {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-        EventListener.register(MinecraftForge.EVENT_BUS);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        rawfish.minebrawlstars.server.EventListener.register(MinecraftForge.EVENT_BUS);
+        ChannelInit.register(event);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-
+        rawfish.minebrawlstars.client.EventListener.register(MinecraftForge.EVENT_BUS);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

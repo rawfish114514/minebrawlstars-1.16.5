@@ -1,4 +1,4 @@
-package rawfish.minebrawlstars.common;
+package rawfish.minebrawlstars.server;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,16 +16,16 @@ public class PlayerManager {
 
     public static void add(ServerPlayerEntity player){
         playerList.add(player);
-        playerMap.put(player,null);
+        playerMap.put(player.getId(),null);
     }
 
     public static void remove(ServerPlayerEntity player){
         playerList.remove(player);
-        playerMap.remove(player);
+        playerMap.remove(player.getId());
     }
 
 
-    public static Map<ServerPlayerEntity, Hero> playerMap=new HashMap<>();
+    public static Map<Integer, Hero> playerMap=new HashMap<>();
     /**
      * 每刻调用
      * 检查所有玩家的状态
@@ -55,7 +55,7 @@ public class PlayerManager {
      * @param heroHead
      */
     public static void process(ServerPlayerEntity player, HeroedHeadArmorItem heroHead){
-        Hero hero=playerMap.get(player);
+        Hero hero=playerMap.get(player.getId());
         if(hero!=null){
             //System.out.println("\u00a75"+hero.getClass());
         }
@@ -63,8 +63,7 @@ public class PlayerManager {
             if(hero!=null){
                 //从Hero状态变成null
                 //只有玩家处于脱战状态才能这样做 否则死亡
-                hero.cancel();
-                playerMap.put(player,null);
+                playerMap.put(player.getId(),null);
             }
         }else {
             if (hero == null) {
@@ -73,8 +72,7 @@ public class PlayerManager {
                 HeroFactory factory=heroHead.heroFactory;
                 if(factory!=null) {
                     Hero h = factory.createHero(player);
-                    h.deploy();
-                    playerMap.put(player, h);
+                    playerMap.put(player.getId(), h);
                 }else{
                     //System.out.println("\u00a75工厂为空！！！");
                 }

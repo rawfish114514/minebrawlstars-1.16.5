@@ -171,5 +171,7 @@
   "itemtype.minebrawlstars.hero": "Hero",
   "itemtype.minebrawlstars.gadget": "Gadger",
   "itemtype.minebrawlstars.starpower": "Star Power",
-  "itemtype.minebrawlstars.gear": "Gear"
+  "itemtype.minebrawlstars.gear": "Gear",
+
+  "channel":"minebrawlstars_channel"
 }
