@@ -1,28 +1,29 @@
 package rawfish.minebrawlstars.brawl.brawler;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.Entity;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.network.IPacket;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.play.client.CChatMessagePacket;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import rawfish.minebrawlstars.MineBrawlStars;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraftforge.fml.network.PacketDistributor;
+import org.lwjgl.system.CallbackI;
 import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.brawl.HeroFactory;
-import rawfish.minebrawlstars.item.ItemInit;
-import rawfish.minebrawlstars.item.brawler.AttackItem;
-
-import java.io.IOException;
+import rawfish.minebrawlstars.common.ChannelInit;
+import rawfish.minebrawlstars.entity.EntityInit;
+import rawfish.minebrawlstars.entity.brawl.ShellyAttackBulletEntity;
+import rawfish.minebrawlstars.math.Matrix33;
+import rawfish.minebrawlstars.math.Toolkit;
+import rawfish.minebrawlstars.network.AttackAction;
+import rawfish.minebrawlstars.network.BulletAction;
 
 public class ShellyHero implements Hero {
 
@@ -40,26 +41,45 @@ public class ShellyHero implements Hero {
     //base actions
 
     @Override
-    public void attack(){
-        emission(0f);
-        emission(10f);
-        emission(20f);
-        emission(-10f);
-        emission(-20f);
+    public boolean attack(){
+        emission(10);
+        return true;
     }
 
-    public void emission(float rot){
-        AbstractArrowEntity abstractarrowentity;
-        abstractarrowentity= ((ArrowItem)Items.ARROW).createArrow(
-                player.getLevel(),
-                new ItemStack(ItemInit.NULL.get()),
-                player);
-        //角度制
-        abstractarrowentity.shootFromRotation(player, player.xRot, player.yRot+rot, 0.0F, 2, 0);
-        abstractarrowentity.setBaseDamage(2);
-        abstractarrowentity.setKnockback(1);
-        player.getLevel().addFreshEntity(abstractarrowentity);
+    public void emission(double rot){
+        ShellyAttackBulletEntity bullet;
+        double mod=10;
+        double xRot=player.xRot*Math.PI/180;
+        double yRot=-player.yRot*Math.PI/180;
+
+        //这个单位向量表示玩家正面向外 fv=Ry*Rx*Ez
+        Vector3d fv=Toolkit.rotMatrix(Toolkit.axisY,yRot).multiply(
+                Toolkit.rotMatrix(Toolkit.axisX,xRot).multiply(
+                        Toolkit.axisZ));
+        //这个单位向量表示玩家侧面向外 sv=Ry*Ex
+        Vector3d sv=Toolkit.rotMatrix(Toolkit.axisY,yRot).multiply(
+                Toolkit.axisX
+        );
+        //av=Rfv(90)*sv
+        Vector3d av=Toolkit.rotMatrix(fv,Math.PI/2).multiply(
+                sv
+        );
+        //am=Rav
+        Matrix33 am=Toolkit.rotMatrix(av,rot*Math.PI/180);
+
+        //修正起始位置
+        fv=Toolkit.rotMatrix(av,-rot*Math.PI/90).multiply(fv);
+
+        for(int i=0;i<5;i++) {
+            Vector3d bulletSpeed=fv.scale(mod);
+            bullet=new ShellyAttackBulletEntity(EntityInit.SHELLY_ATTACK_BULLET.get(),player.level);
+            bullet.speed=bulletSpeed;
+            bullet.basePosition=player.position();
+
+            player.level.addFreshEntity(bullet);
+            bullet.hasMove=true;
+
+            fv=am.multiply(fv);
+        }
     }
-
-
 }

@@ -1,10 +1,9 @@
-package rawfish.minebrawlstars.brawl.armor.models;
+package rawfish.minebrawlstars.render.head.models;
 
-import net.minecraft.client.renderer.entity.model.ArmorStandArmorModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import rawfish.minebrawlstars.brawl.armor.HeroedHeadModel;
+import rawfish.minebrawlstars.render.head.HeroedHeadModel;
 
 @OnlyIn(Dist.CLIENT)
 public class ShellyHeadModel extends HeroedHeadModel {
@@ -33,31 +32,31 @@ public class ShellyHeadModel extends HeroedHeadModel {
         h_r1 = new ModelRenderer(this);
         h_r1.setPos(0.0F, -34.391F, 8.1845F);
         model.addChild(h_r1);
-        setRotationAngle(h_r1, -0.8727F, 0.0F, 0.0F);
-        h_r1.texOffs(32, 32).addBox(-1.5F, -4.0F, -1.5F, 3.0F, 8.0F, 3.0F, 0.0F, false);
+        setRotationAngle(h_r1, -0.829F, 0.0F, 0.0F);
+        h_r1.texOffs(32, 32).addBox(-1.5F, -4.0F, -1.0F, 3.0F, 8.0F, 3.0F, 0.0F, false);
 
         h_r2 = new ModelRenderer(this);
         h_r2.setPos(-2.5F, -32.4779F, 8.6769F);
         model.addChild(h_r2);
-        setRotationAngle(h_r2, -1.3588F, -0.6003F, -0.121F);
+        setRotationAngle(h_r2, -1.3047F, -0.6564F, 0.0835F);
         h_r2.texOffs(32, 32).addBox(-1.5F, -4.0F, -1.5F, 3.0F, 8.0F, 3.0F, 0.0F, false);
 
         h_r3 = new ModelRenderer(this);
         h_r3.setPos(2.5F, -32.4779F, 8.6769F);
         model.addChild(h_r3);
-        setRotationAngle(h_r3, -1.3588F, 0.6003F, 0.121F);
+        setRotationAngle(h_r3, -1.3047F, 0.6564F, -0.0835F);
         h_r3.texOffs(32, 32).addBox(-1.5F, -4.0F, -1.5F, 3.0F, 8.0F, 3.0F, 0.0F, false);
 
         h_r4 = new ModelRenderer(this);
         h_r4.setPos(-1.5F, -30.5647F, 9.1693F);
         model.addChild(h_r4);
-        setRotationAngle(h_r4, -2.1293F, -0.3378F, 0.2042F);
+        setRotationAngle(h_r4, -2.2007F, -0.1409F, 0.5015F);
         h_r4.texOffs(32, 32).addBox(-1.5F, -4.0F, -1.5F, 3.0F, 8.0F, 3.0F, 0.0F, false);
 
         h_r5 = new ModelRenderer(this);
         h_r5.setPos(1.5F, -30.5647F, 9.1693F);
         model.addChild(h_r5);
-        setRotationAngle(h_r5, -2.1293F, 0.3378F, -0.2042F);
+        setRotationAngle(h_r5, -2.2007F, 0.1409F, -0.5015F);
         h_r5.texOffs(32, 32).addBox(-1.5F, -4.0F, -1.5F, 3.0F, 8.0F, 3.0F, 0.0F, false);
 
         cube_r1 = new ModelRenderer(this);

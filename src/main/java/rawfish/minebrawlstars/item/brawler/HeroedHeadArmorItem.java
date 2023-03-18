@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import rawfish.minebrawlstars.brawl.HeroFactory;
-import rawfish.minebrawlstars.brawl.armor.HeroedHeadModel;
+import rawfish.minebrawlstars.render.head.HeroedHeadModel;
 import rawfish.minebrawlstars.item.BaseArmorItem;
 
 import javax.annotation.Nullable;

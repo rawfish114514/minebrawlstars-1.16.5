@@ -1,11 +1,12 @@
 package rawfish.minebrawlstars.item;
 
 import net.minecraft.item.*;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import rawfish.minebrawlstars.MineBrawlStars;
-import rawfish.minebrawlstars.brawl.armor.HeroedHeadModels;
+import rawfish.minebrawlstars.render.head.HeroedHeadModels;
 import rawfish.minebrawlstars.brawl.brawlerfactort.ShellyHeroFactory;
 import rawfish.minebrawlstars.item.brawl.EnergyDrinkItem;
 import rawfish.minebrawlstars.item.brawler.*;
@@ -17,6 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemInit {
+    public static void register(IEventBus eventBus){
+        ICONS.register(eventBus);
+        ITEMS.register(eventBus);
+    }
+
     public static final DeferredRegister<Item> ICONS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MineBrawlStars.MODID);
     public static final DeferredRegister<Item> ITEMS =

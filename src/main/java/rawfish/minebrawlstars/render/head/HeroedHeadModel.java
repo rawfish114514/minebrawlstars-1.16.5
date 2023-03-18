@@ -1,4 +1,4 @@
-package rawfish.minebrawlstars.brawl.armor;
+package rawfish.minebrawlstars.render.head;
 
 import net.minecraft.client.renderer.entity.model.ArmorStandArmorModel;
 import net.minecraft.client.renderer.model.ModelRenderer;

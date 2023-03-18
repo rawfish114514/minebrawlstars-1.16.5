@@ -2,6 +2,7 @@ package rawfish.minebrawlstars.network;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
+import net.minecraftforge.fml.network.PacketDistributor;
 import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.common.ChannelInit;
 import rawfish.minebrawlstars.server.PlayerManager;
@@ -32,8 +33,5 @@ public class AttackAction{
         if(hero!=null){
             hero.attack();
         }
-
-        System.out.println("aaa");
-        System.out.println(ChannelInit.simpleChannelRL);
     }
 }
