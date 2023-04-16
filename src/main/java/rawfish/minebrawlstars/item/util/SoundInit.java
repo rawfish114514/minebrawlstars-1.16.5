@@ -116,4 +116,12 @@ public class SoundInit {
     public static final RegistryObject<SoundEvent> ESPORTS_2=(SOUNDS.register(
             "esports_2.name",
             () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "esports_2"))));
+
+
+
+    //sound effect
+
+    public static final RegistryObject<SoundEvent> SHELLY_ATTACK=SOUNDS.register(
+            "shelly_attack.name",
+            () -> new SoundEvent(new ResourceLocation(MineBrawlStars.MODID, "shelly_attack")));
 }

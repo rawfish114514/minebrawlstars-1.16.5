@@ -29,12 +29,6 @@ public class ShellyAttackBulletEntity extends Entity {
     }
 
     public static List<ShellyAttackBulletEntity> entityList=new ArrayList<>();
-    private static final DataParameter<Vector3d> DATA_POSITION_ID=
-            EntityDataManager.defineId(ShellyAttackBulletEntity.class, Vector3dIDataSerializer.SERIALIZER);
-    private static final DataParameter<Boolean> DATA_HASMOVE_ID=
-            EntityDataManager.defineId(ShellyAttackBulletEntity.class,DataSerializers.BOOLEAN);
-    private static final DataParameter<Vector3d> DATA_SPEED_ID=
-            EntityDataManager.defineId(ShellyAttackBulletEntity.class, Vector3dIDataSerializer.SERIALIZER);
 
     public ShellyAttackBulletEntity(EntityType<ShellyAttackBulletEntity> entityType, World world) {
         super(entityType,world);
@@ -84,16 +78,6 @@ public class ShellyAttackBulletEntity extends Entity {
                 entityList.remove(this);
             }
         }
-/*
-        if(level.isClientSide) {
-            basePosition=entityData.get(DATA_POSITION_ID);
-            hasMove=entityData.get(DATA_HASMOVE_ID);
-            speed=entityData.get(DATA_SPEED_ID);
-        }else{
-            entityData.set(DATA_POSITION_ID, basePosition);
-            entityData.set(DATA_HASMOVE_ID, hasMove);
-            entityData.set(DATA_SPEED_ID, speed);
-        }*/
     }
 
     @Override
@@ -136,24 +120,14 @@ public class ShellyAttackBulletEntity extends Entity {
 
 
     @Override
-    protected void defineSynchedData() {
-        entityData.define(DATA_POSITION_ID,position());
-        entityData.define(DATA_HASMOVE_ID,hasMove);
-        if(speed!=null) {
-            entityData.define(DATA_SPEED_ID, speed);
-        }else{
-            entityData.define(DATA_SPEED_ID, Vector3d.ZERO);
-        }
-    }
-
+    protected void defineSynchedData() {}
     @Override
     protected void readAdditionalSaveData(CompoundNBT p_70037_1_) {}
     @Override
     protected void addAdditionalSaveData(CompoundNBT p_213281_1_) {}
     @Override
     public IPacket<?> getAddEntityPacket() {
-        System.out.println("invoke:getAddEntityPacket");
         //return NetworkHooks.getEntitySpawningPacket(this);
-        return new SChatPacket(new StringTextComponent("nmsl"), ChatType.CHAT, UUID.randomUUID());
+        return new SChatPacket(new StringTextComponent(""), ChatType.GAME_INFO, UUID.randomUUID());
     }
 }

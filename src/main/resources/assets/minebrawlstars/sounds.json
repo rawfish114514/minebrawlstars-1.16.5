@@ -281,6 +281,15 @@
         "stream": true
       }
     ]
-  }
+  },
 
+  "shelly_attack": {
+    "category": "voice",
+    "sounds": [
+      {
+        "name": "minebrawlstars:soundeffect/shelly_attack",
+        "stream": true
+      }
+    ]
+  }
 }

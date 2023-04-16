@@ -6,8 +6,8 @@ import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import rawfish.minebrawlstars.MineBrawlStars;
 import rawfish.minebrawlstars.client.ClientHandler;
-import rawfish.minebrawlstars.network.AttackAction;
-import rawfish.minebrawlstars.network.BulletAction;
+import rawfish.minebrawlstars.network.CAttack;
+import rawfish.minebrawlstars.network.SAttack;
 import rawfish.minebrawlstars.server.ServerHandler;
 
 import java.util.Optional;
@@ -22,27 +22,25 @@ public class ChannelInit {
 
 
     public static void register(FMLCommonSetupEvent event) {
-
         simpleChannel = NetworkRegistry.newSimpleChannel(simpleChannelRL, () -> MESSAGE_PROTOCOL_VERSION,
                 ClientHandler::isThisProtocolAcceptedByClient,
                 ServerHandler::isThisProtocolAcceptedByServer);
 
-        simpleChannel.registerMessage(MessageType.ATTACK, AttackAction.class,
-                AttackAction::encode,
-                AttackAction::decode,
-                AttackAction::handle,
+        simpleChannel.registerMessage(MessageType.CATTACK, CAttack.class,
+                CAttack::encode,
+                CAttack::decode,
+                CAttack::handle,
                 Optional.of(PLAY_TO_SERVER));
 
-        simpleChannel.registerMessage(MessageType.BULLET, BulletAction.class,
-                BulletAction::encode,
-                BulletAction::decode,
-                BulletAction::handle,
+        simpleChannel.registerMessage(MessageType.SATTACK, SAttack.class,
+                SAttack::encode,
+                SAttack::decode,
+                SAttack::handle,
                 Optional.of(PLAY_TO_CLIENT));
     }
 
     public static class MessageType{
-        public static final int ATTACK=128;
-
-        public static final int BULLET=10321;
+        public static final int CATTACK=128;
+        public static final int SATTACK=129;
     }
 }

@@ -6,6 +6,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import rawfish.minebrawlstars.MineBrawlStars;
+import rawfish.minebrawlstars.brawl.HeroFactorys;
 import rawfish.minebrawlstars.render.head.HeroedHeadModels;
 import rawfish.minebrawlstars.brawl.brawlerfactort.ShellyHeroFactory;
 import rawfish.minebrawlstars.item.brawl.EnergyDrinkItem;
@@ -105,7 +106,7 @@ public class ItemInit {
                     () -> new HeroedHeadArmorItem(
                             HeroedHeadArmorMaterial.HEROEDHEAD_SHELLY,
                             HeroedHeadArmorItem.HeroRarity.STARTING,
-                            ShellyHeroFactory.thisFactory,
+                            HeroFactorys.SHELLYHEROFACTORY,
                             HeroedHeadModels.MODEL_SHELLY
                             )));
             add(ITEMS.register(

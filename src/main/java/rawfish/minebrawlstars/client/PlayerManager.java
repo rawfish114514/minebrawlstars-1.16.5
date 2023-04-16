@@ -1,6 +1,8 @@
-package rawfish.minebrawlstars.server;
+package rawfish.minebrawlstars.client;
 
-import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.item.ItemStack;
 import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.brawl.HeroFactory;
@@ -12,28 +14,31 @@ import java.util.List;
 import java.util.Map;
 
 public class PlayerManager {
-    public static List<ServerPlayerEntity> playerList=new ArrayList<>();
+    public static List<AbstractClientPlayerEntity> playerList=new ArrayList<>();
 
-    public static void add(ServerPlayerEntity player){
+    public static void add(AbstractClientPlayerEntity player){
         playerList.add(player);
         playerMap.put(player.getId(),null);
     }
 
-    public static void remove(ServerPlayerEntity player){
+    public static void remove(AbstractClientPlayerEntity player){
         playerList.remove(player);
         playerMap.remove(player.getId());
     }
 
 
     public static Map<Integer, Hero> playerMap=new HashMap<>();
+
+    public static ClientPlayerEntity thisPlayer=null;
     /**
      * 每刻调用
      * 检查所有玩家的状态
      * 分配他们的Hero对象
      */
     public static void revalue(){
+        thisPlayer=Minecraft.getInstance().player;
         for(int i=0;i<playerList.size();i++){
-            ServerPlayerEntity player=playerList.get(i);
+            AbstractClientPlayerEntity player=playerList.get(i);
             pb:
             {
                 for (ItemStack itemStack : player.getArmorSlots()) {
@@ -53,7 +58,7 @@ public class PlayerManager {
      * @param player
      * @param heroHead
      */
-    public static void process(ServerPlayerEntity player, HeroedHeadArmorItem heroHead){
+    public static void process(AbstractClientPlayerEntity player, HeroedHeadArmorItem heroHead){
         Hero hero=playerMap.get(player.getId());
         if(hero!=null){
             //System.out.println("\u00a75"+hero.getClass());
@@ -73,7 +78,7 @@ public class PlayerManager {
                     Hero h = factory.createHero(player);
                     playerMap.put(player.getId(), h);
                 }else{
-                    //System.out.println("\u00a75工厂为空！！！");
+                    System.out.println("\u00a75工厂为空！！！");
                 }
             }else{
                 //从Hero状态变成Hero状态

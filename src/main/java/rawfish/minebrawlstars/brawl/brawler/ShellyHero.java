@@ -1,35 +1,24 @@
 package rawfish.minebrawlstars.brawl.brawler;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.item.ArrowItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.RegistryKey;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.fml.network.PacketDistributor;
-import org.lwjgl.system.CallbackI;
+import rawfish.minebrawlstars.brawl.AttackResult;
 import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.brawl.HeroFactory;
-import rawfish.minebrawlstars.common.ChannelInit;
+import rawfish.minebrawlstars.client.PlayerManager;
 import rawfish.minebrawlstars.entity.EntityInit;
+import rawfish.minebrawlstars.entity.EntityPut;
 import rawfish.minebrawlstars.entity.brawl.ShellyAttackBulletEntity;
+import rawfish.minebrawlstars.item.util.SoundInit;
 import rawfish.minebrawlstars.math.Matrix33;
 import rawfish.minebrawlstars.math.Toolkit;
-import rawfish.minebrawlstars.network.AttackAction;
-import rawfish.minebrawlstars.network.BulletAction;
 
 public class ShellyHero implements Hero {
 
     public HeroFactory factory;
 
-    public ServerPlayerEntity player;
+    public PlayerEntity player;
 
     @Override
     public HeroFactory getFactory() {
@@ -41,16 +30,26 @@ public class ShellyHero implements Hero {
     //base actions
 
     @Override
-    public boolean attack(){
-        emission(10);
-        return true;
+    public AttackResult attack(Vector3d position, double xRot, double yRot, double scale){
+        emission(10,position,xRot,yRot);
+        if(player.level.isClientSide) {
+            player.level.playSound(
+                    PlayerManager.thisPlayer,
+                    player.blockPosition(),
+                    SoundInit.SHELLY_ATTACK.get(),
+                    SoundCategory.VOICE, 1, (float) player.position().distanceTo(PlayerManager.thisPlayer.position()));
+        }
+        return null;
     }
 
-    public void emission(double rot){
+    @Override
+    public PlayerEntity getPlayer(){
+        return player;
+    }
+
+    public void emission(double rot,Vector3d position,double xRot,double yRot){
         ShellyAttackBulletEntity bullet;
         double mod=10;
-        double xRot=player.xRot*Math.PI/180;
-        double yRot=-player.yRot*Math.PI/180;
 
         //这个单位向量表示玩家正面向外 fv=Ry*Rx*Ez
         Vector3d fv=Toolkit.rotMatrix(Toolkit.axisY,yRot).multiply(
@@ -74,9 +73,14 @@ public class ShellyHero implements Hero {
             Vector3d bulletSpeed=fv.scale(mod);
             bullet=new ShellyAttackBulletEntity(EntityInit.SHELLY_ATTACK_BULLET.get(),player.level);
             bullet.speed=bulletSpeed;
-            bullet.basePosition=player.position();
+            bullet.basePosition=position;
+            bullet.setPos(position.x,position.y,position.z);
 
-            player.level.addFreshEntity(bullet);
+            if(player.level.isClientSide){
+                EntityPut.addRenderEntity(player.level,bullet);
+            }else{
+                EntityPut.addServerEntity(player.level,bullet);
+            }
             bullet.hasMove=true;
 
             fv=am.multiply(fv);

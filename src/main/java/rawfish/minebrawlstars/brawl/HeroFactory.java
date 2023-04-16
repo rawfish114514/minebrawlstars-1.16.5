@@ -1,5 +1,6 @@
 package rawfish.minebrawlstars.brawl;
 
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 
 public interface HeroFactory {
@@ -10,5 +11,5 @@ public interface HeroFactory {
      */
     boolean isReasonable(HeroFactory target);
 
-    Hero createHero(ServerPlayerEntity player);
+    Hero createHero(PlayerEntity player);
 }

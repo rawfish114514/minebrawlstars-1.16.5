@@ -11,13 +11,13 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import rawfish.minebrawlstars.client.TEventBus;
 import rawfish.minebrawlstars.common.ChannelInit;
 import rawfish.minebrawlstars.entity.EntityInit;
 import rawfish.minebrawlstars.item.ItemInit;
 import rawfish.minebrawlstars.item.util.SoundInit;
 import rawfish.minebrawlstars.network.sync.DataSerializersInit;
 import rawfish.minebrawlstars.render.renderer.item.ShellyAttackBulletRenderer;
+import rawfish.minebrawlstars.system.ActionManager;
 
 @Mod(MineBrawlStars.MODID)
 public class MineBrawlStars {
@@ -66,6 +66,6 @@ public class MineBrawlStars {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
-
+        ActionManager.register(MinecraftForge.EVENT_BUS);
     }
 }

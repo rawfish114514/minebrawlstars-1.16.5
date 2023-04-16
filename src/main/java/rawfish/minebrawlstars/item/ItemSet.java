@@ -9,9 +9,6 @@ import net.minecraftforge.fml.RegistryObject;
 
 import java.util.List;
 
-/**
- * 脑瘫ojang使用的迭代器真让我觉得不可思议，从1.8.9我就注意到这个问题，即使到了1.16.5还没有解决这个问题，或许ojang根本不在意物品排列顺序
- */
 public class ItemSet extends Item {
     public ItemSet(List<RegistryObject<Item>> list,ItemGroup itemGroup) {
         super(new Properties().tab(itemGroup));

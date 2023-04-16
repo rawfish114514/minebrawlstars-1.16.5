@@ -1,32 +1,23 @@
 package rawfish.minebrawlstars.client;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.OutlineLayerBuffer;
-import net.minecraft.client.renderer.RenderTypeBuffers;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.EntityLeaveWorldEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import rawfish.minebrawlstars.brawl.Hero;
 import rawfish.minebrawlstars.common.ChannelInit;
-import rawfish.minebrawlstars.entity.EntityInit;
-import rawfish.minebrawlstars.entity.brawl.ShellyAttackBulletEntity;
 import rawfish.minebrawlstars.item.brawler.AttackItem;
-import rawfish.minebrawlstars.math.Matrix33;
-import rawfish.minebrawlstars.math.Toolkit;
-import rawfish.minebrawlstars.network.AttackAction;
-import rawfish.minebrawlstars.render.renderer.item.ShellyAttackBulletRenderer;
-import rawfish.minebrawlstars.server.PlayerManager;
+import rawfish.minebrawlstars.network.CAttack;
+import rawfish.minebrawlstars.network.SAttack;
 
 /**
  * 玩家所有行为都在此监听并加工发送给服务端处理
@@ -44,61 +35,54 @@ public class EventListener {
         if(player instanceof ClientPlayerEntity){
             ItemStack itemStack=event.getItemStack();
             if(itemStack.getItem() instanceof AttackItem){
-                //ChannelInit.simpleChannel.sendToServer(new AttackAction(entity.getId()));
+                //server
+                ChannelInit.simpleChannel.sendToServer(new CAttack(
+                        player.getId(),
+                        player.position().add(0,1,0),
+                        player.xRot*Math.PI/180,
+                        -player.yRot*Math.PI/180,
+                        1
+                ));
 
-                System.out.println("攻击行为: "+player.getDisplayName().getString());
-                double rot=10;
-                ShellyAttackBulletEntity bullet;
-                double mod=10;
-                double xRot=player.xRot*Math.PI/180;
-                double yRot=-player.yRot*Math.PI/180;
-
-                //这个单位向量表示玩家正面向外 fv=Ry*Rx*Ez
-                Vector3d fv=Toolkit.rotMatrix(Toolkit.axisY,yRot).multiply(
-                        Toolkit.rotMatrix(Toolkit.axisX,xRot).multiply(
-                                Toolkit.axisZ));
-                //这个单位向量表示玩家侧面向外 sv=Ry*Ex
-                Vector3d sv=Toolkit.rotMatrix(Toolkit.axisY,yRot).multiply(
-                        Toolkit.axisX
-                );
-                //av=Rfv(90)*sv
-                Vector3d av=Toolkit.rotMatrix(fv,Math.PI/2).multiply(
-                        sv
-                );
-                //am=Rav
-                Matrix33 am=Toolkit.rotMatrix(av,rot*Math.PI/180);
-
-                //修正起始位置
-                fv=Toolkit.rotMatrix(av,-rot*Math.PI/90).multiply(fv);
-
-                for(int i=0;i<5;i++) {
-                    Vector3d bulletSpeed=fv.scale(mod);
-                    bullet=new ShellyAttackBulletEntity(EntityInit.SHELLY_ATTACK_BULLET.get(),player.level);
-                    bullet.speed=bulletSpeed;
-                    bullet.basePosition=player.position();
-
-
-                    ClientWorld clientWorld=(ClientWorld)player.level;
-                    int c=1000;
-                    while(true) {
-                        Entity entity = clientWorld.getEntity(c);
-                        if(entity==null){
-                            break;
-                        }else{
-                            c++;
-                        }
-                    }
-                    System.out.println(c);
-                    clientWorld.putNonPlayerEntity(c,bullet);
-                    bullet.hasMove=true;
-
-                    fv=am.multiply(fv);
-                }
-
+                //client
+                SAttack.handleImplement(new SAttack(
+                        player.getId(),
+                        player.position().add(0,1,0),
+                        player.xRot*Math.PI/180,
+                        -player.yRot*Math.PI/180,
+                        1
+                ),null);
 
             }
         }
+    }
 
+    @SubscribeEvent
+    public static void onEntityJoinWorldEvent(EntityJoinWorldEvent event){
+        Entity entity=event.getEntity();
+        if(entity instanceof AbstractClientPlayerEntity){
+            onPlayerJoinWorldEvent((AbstractClientPlayerEntity)entity);
+        }
+    }
 
+    @SubscribeEvent
+    public static void onEntityLeaveWorldEvent(EntityLeaveWorldEvent event){
+        Entity entity=event.getEntity();
+        if(entity instanceof AbstractClientPlayerEntity){
+            onPlayerLeaveWorldEvent((AbstractClientPlayerEntity)entity);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onClientTickEvent(TickEvent.ClientTickEvent event){
+        PlayerManager.revalue();
+    }
+
+    public static void onPlayerJoinWorldEvent(AbstractClientPlayerEntity player){
+        PlayerManager.add(player);
+    }
+
+    public static void onPlayerLeaveWorldEvent(AbstractClientPlayerEntity player){
+        PlayerManager.remove(player);
     }
 }
